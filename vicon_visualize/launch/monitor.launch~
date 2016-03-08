@@ -1,0 +1,28 @@
+<launch>
+<arg name="nodename1" default="vicon_rviz1" />
+<arg name="nodename2" default="vicon_rviz2" />
+<arg name="nodename3" default="vicon_rviz3" />
+
+<arg name="topic1" default="/vicion/M100_1/M100_1" />
+<arg name="topic2" default="/vicion/M100_2/M100_2" />
+<arg name="topic3" default="/vicion/M100_3/M100_3" />
+
+<arg name="pathName1" default="vis_path1" />
+<arg name="pathName2" default="vis_path2" />
+<arg name="pathName3" default="vis_path3" />
+
+<node name="$(arg nodename1)" pkg="vicon_visualize" type="vicon_rviz" output="screen">
+<param name="topicName" type="string" value="$(arg topic1)" />
+<param name="pathName" type="string" value="$(arg pathName1)" />
+</node>
+
+<node name="$(arg nodename2)" pkg="vicon_visualize" type="vicon_rviz" output="screen">
+<param name="topicName" type="string" value="$(arg topic2)" />
+<param name="pathName" type="string" value="$(arg pathName2)" />
+</node>
+
+<node name="$(arg nodename3)" pkg="vicon_visualize" type="vicon_rviz" output="screen">
+<param name="topicName" type="string" value="$(arg topic3)" />
+<param name="pathName" type="string" value="$(arg pathName3)" />
+</node>
+</launch>

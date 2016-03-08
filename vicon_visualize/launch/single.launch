@@ -1,0 +1,34 @@
+<launch>
+<arg name="nodename1" default="vicon_rviz1" />
+<arg name="nodename2" default="vicon_rviz2" />
+<arg name="nodename3" default="vicon_rviz3" />
+
+<arg name="topic1" default="/vicon/M100_1/M100_1" />
+<arg name="topic2" default="/vicon/M100_2/M100_2" />
+<arg name="topic3" default="/vicon/M100_3/M100_3" />
+
+<arg name="pathName1" default="vis_path1" />
+<arg name="pathName2" default="vis_path2" />
+<arg name="pathName3" default="vis_path3" />
+
+<arg name="genTopic1" default="genTopic1" />
+
+<arg name="pathGen1" default="pathGen1" />
+
+<arg name="error1" default="error1" />
+
+<arg name="safety1" default="safety1" />
+
+<arg name="avoidance1" default="avoidance1" />
+
+<node name="$(arg nodename1)" pkg="vicon_visualize" type="vicon_rviz" output="screen">
+<param name="topicName" type="string" value="$(arg topic1)" />
+<param name="pathName" type="string" value="$(arg pathName1)" />
+<param name="genTopic" type="string" value="$(arg genTopic1)">
+<param name="pathGen" type="string" value="$(arg pathGen1)">
+<param name="error" type="string" value="$(arg error1)">
+<param name="safety" type="string" value="$(arg safety1)">
+<param name="avoidance" type="string" value="$(arg avoidance1)">
+</node>
+
+</launch>
